@@ -11,12 +11,14 @@ public class Main
 
     public static void main(String[] args)
     {
-        File directorio = new File(".");
+        if(args.length>0){
+        File directorio = new File(args[0]);
         File[] listaFicheros = directorio.listFiles();
         for (File fichero : listaFicheros)
         {
             System.out.println(fichero.getName());
             System.out.println(fichero.length());
         }
+    }
     }
 }
