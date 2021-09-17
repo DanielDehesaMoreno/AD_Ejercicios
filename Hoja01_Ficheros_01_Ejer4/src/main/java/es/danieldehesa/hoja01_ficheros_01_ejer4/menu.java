@@ -144,6 +144,7 @@ public class menu
                     break;
                 case 0:
                     System.out.println("CHAO; PESCAO");
+                    salir=true;
                     break;
                 default:
                     System.out.println("Solo numeros entre 0 y 7");
