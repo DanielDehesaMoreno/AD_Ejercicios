@@ -11,23 +11,29 @@ import java.util.Scanner;
  *
  * @author usuario
  */
-public class Ej1 {
+public class Ej1
+{
 
-    public static void main(String[] args){
-        Scanner teclado= new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        Scanner teclado = new Scanner(System.in);
         System.out.println("¿Que fichero quieres usar?");
-        String fichero=teclado.nextLine();
+        String fichero = teclado.nextLine();
         System.out.println("¿Que texto quieres añadir al fichero?");
-        String texto=teclado.nextLine();
+        String texto = teclado.nextLine();
         File f = new File(fichero);
-        try{
+        try
+        {
             PrintWriter escritor = new PrintWriter(new FileWriter(fichero));
-            
-        }catch (FileNotFoundException fn){
+            escritor.write(texto.substring(0, 1).toLowerCase() + texto.substring(1).toUpperCase());
+            escritor.close();
+        } catch (FileNotFoundException fn)
+        {
             System.out.println("No se encuentra el fichero");
-        }catch (IOException io){
+        } catch (IOException io)
+        {
             System.out.println("Error de E/S");
         }
-        
+
     }
 }
