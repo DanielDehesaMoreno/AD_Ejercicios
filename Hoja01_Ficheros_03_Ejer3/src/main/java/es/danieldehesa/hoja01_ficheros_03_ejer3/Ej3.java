@@ -99,7 +99,7 @@ public class Ej3
                         while ((linea = lector.readLine()) != null)
                         {
                             String[] elementos = linea.split(",");
-                            if (elementos[1].toUpperCase().equalsIgnoreCase(nombre))
+                            if (elementos[1].toUpperCase().trim().equalsIgnoreCase(nombre))
                             {
                                 encontrado = true;
                             }

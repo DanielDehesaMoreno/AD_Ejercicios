@@ -17,7 +17,7 @@ public class Ej2
     {
         Scanner teclado = new Scanner(System.in);
         File f = new File("texto.txt");
-        int i, contador = 0;
+        int i, contador = 0,posicion=0;
         try
         {
             System.out.println("¿Que letra quieres buscar?");
@@ -26,10 +26,12 @@ public class Ej2
             FileReader lector = new FileReader(f);
             while ((i = lector.read()) != -1)
             {
+                posicion++;
                 Character.toLowerCase((char) i);
                 if (c == (char) i)
                 {
                     contador++;
+                    System.out.println("Encontrado en la posicion "+posicion);
                 }
             }
             System.out.println("Tu letra aparece " + contador + " veces en el ");
