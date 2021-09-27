@@ -1,13 +1,12 @@
-package es.danieldehesa.hoja01_ficheros_04_ejer1;
+package es.danieldehesa.hoja01_ficheros_04_ejer2;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  *
  * @author usuario
  */
-public class Futbolista 
+public class Futbolista implements Comparable<Futbolista>
 {
 
     private int identificador;
@@ -73,7 +72,6 @@ public class Futbolista
     {
         this.puesto = Puesto.valueOf(s);
     }
-    
 
     public void setAltura(float altura)
     {
@@ -106,10 +104,23 @@ public class Futbolista
     @Override
     public String toString()
     {
-        String linea = String.format("%3d %-25s %3s %-16s %4.2f", identificador, alias, codigoEq,puesto, altura);
+        String linea = String.format("%3d %-25s %3s %-16s %4.2f", identificador, alias, codigoEq, puesto, altura);
         return linea;
     }
-    
+
+    @Override
+    public int compareTo(Futbolista o)
+    {
+        if (identificador < o.getIdentificador())
+        {
+            return -1;
+        }
+        if (identificador > o.getIdentificador())
+        {
+            return 1;
+        }
+        return 0;
+    }
 
     
 
