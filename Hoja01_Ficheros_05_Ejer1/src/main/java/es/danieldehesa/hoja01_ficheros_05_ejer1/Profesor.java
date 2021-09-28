@@ -3,6 +3,7 @@ package es.danieldehesa.hoja01_ficheros_05_ejer1;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 /**
  *
@@ -66,6 +67,11 @@ public class Profesor implements Serializable
     public void setInstituto(Instituto instituto)
     {
         this.instituto = instituto;
+    }
+    
+    public int getMesesTrabajados(){
+        int meses = (int) ChronoUnit.MONTHS.between(getFechaIngreso(), LocalDate.now());
+        return meses;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package es.danieldehesa.hoja01_ficheros_04_ejer2;
+package es.danieldehesa.hoja01_ficheros_05_ejer1;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
