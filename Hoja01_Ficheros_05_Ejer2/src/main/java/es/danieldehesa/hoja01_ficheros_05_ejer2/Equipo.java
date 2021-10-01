@@ -69,11 +69,12 @@ public class Equipo implements Serializable
     @Override
     public String toString()
     {
-        String linea = String.format("%-25s %2d %3s %3.2f %n", nombre, numAlumnos, puntos);
+        String linea = String.format("%-25s %2d \t %5.2f \n", nombre, numAlumnos, puntos);
         if(alumnos.length>0){
-        for (int i = 0; i < alumnos.length; i++)
+        for (int i = 0; i < numAlumnos; i++)
         {
-            linea = linea + alumnos[i].toString();
+            
+            linea+= "\t"+ alumnos[i].toString();
         }
         }
         return linea;

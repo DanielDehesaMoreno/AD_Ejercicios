@@ -45,7 +45,7 @@ public class Alumno implements Serializable
     @Override
     public String toString()
     {
-        String linea = String.format("%s %2d %n", nombre, edad);
+        String linea = String.format("%s %2d \n", nombre, edad);
         return linea;
     }
 
