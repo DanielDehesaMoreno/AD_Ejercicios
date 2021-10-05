@@ -123,7 +123,7 @@ public class Ej1
     {
         System.out.println("Que equipo quieres grabar en el fichero: ");
         String eq = teclado.nextLine();
-        Path equipos = Paths.get(eq);
+        Path equipos = Paths.get(eq.toUpperCase() + ".csv");
         try
         {
             List<Futbolista> filtrados = getFutbolistas(fichero)
@@ -137,6 +137,24 @@ public class Ej1
                 bw.newLine();
             }
             bw.close();
+        } catch (IOException e)
+        {
+            System.out.println(e.toString());
+        }
+        return equipos;
+    }
+
+    private static Path crearFicheroEquipos2(Path fichero, Scanner teclado)
+    {
+        System.out.println("Que equipo quieres grabar en el fichero: ");
+        String eq = teclado.nextLine();
+        Path equipos = Paths.get(eq.toUpperCase() + ".csv");
+        try
+        {
+            Path write = Files.write(equipos, getFutbolistas(fichero)
+                    .stream()
+                    .filter(f -> f.getCodEquipo().equals(eq)).map(f -> f.toString())
+                    .toList());
         } catch (IOException e)
         {
             System.out.println(e.toString());
