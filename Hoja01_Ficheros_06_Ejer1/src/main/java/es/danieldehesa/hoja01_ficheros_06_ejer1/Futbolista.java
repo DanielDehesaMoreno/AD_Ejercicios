@@ -26,6 +26,7 @@ public class Futbolista implements Serializable
     
     public Futbolista(int idJugador, String nombre, String apellidos, String alias, String puesto, float altura, LocalDate fechaNacimiento, String codEquipo)
     {
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.idJugador = idJugador;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -142,7 +143,7 @@ public class Futbolista implements Serializable
     @Override
     public String toString()
     {
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return idJugador + "," + nombre + "," + apellidos + "," + alias + "," + puesto + "," + altura + "," + fechaNacimiento.format(f) + "," + codEquipo;
     }
     
